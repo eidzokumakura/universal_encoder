@@ -18,6 +18,17 @@ class RotDecoder(QMainWindow):
     def decrypting(self):
         self.ui.textEdit_2.setText(decrypt(self.ui.textEdit.toPlainText(), self.ui.spinBox.value())[0])
 
+    def checked_dec_btn(self):
+        self.ui.decrypt_btn.nextCheckState()
+        self.encrypting()
+        self.ui.spinBox.valueChanged.connect(self.encrypting)
+        self.ui.textEdit.textChanged.connect(self.encrypting)
+
+    def checked_enc_btn(self):
+        self.ui.encrypt_btn.nextCheckState()
+        self.decrypting()
+        self.ui.spinBox.valueChanged.connect(self.decrypting)
+        self.ui.textEdit.textChanged.connect(self.decrypting)
     def encrypting(self):
         self.ui.textEdit_2.setText(encrypt(self.ui.textEdit.toPlainText(), self.ui.spinBox.value()))
 if __name__ == "__main__":
