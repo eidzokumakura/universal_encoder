@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>797</width>
+    <height>651</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -71,153 +71,183 @@ QSpinBox:hover {
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <layout class="QVBoxLayout" name="original_text">
-      <item>
-       <widget class="QLabel" name="label">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="caesar">
+       <attribute name="title">
+        <string>Шифр Цезаря</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QVBoxLayout" name="original_text">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Оригинальный текст</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="textEdit"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="encrypted_decrypted_text">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Зашифрованный / Дешифрованный текст</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="textEdit_2"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="buttons">
+          <item>
+           <widget class="QPushButton" name="actio">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>Зашифровать</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>:/images/padlock_unlocked.png</normaloff>
+              <normalon>:/images/padlock_locked.png</normalon>
+              <disabledoff>:/images/images/padlock_unlocked.svg</disabledoff>
+              <disabledon>:/images/images/padlock_locked.svg</disabledon>:/images/padlock_unlocked.png</iconset>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="text">
+             <string>Скопировать</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="slider">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Шаг шифрования</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="horizontalSlider">
+            <property name="minimum">
+             <number>-50</number>
+            </property>
+            <property name="maximum">
+             <number>50</number>
+            </property>
+            <property name="value">
+             <number>1</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinBox">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="mouseTracking">
+             <bool>false</bool>
+            </property>
+            <property name="tabletTracking">
+             <bool>false</bool>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::NoButtons</enum>
+            </property>
+            <property name="minimum">
+             <number>-50</number>
+            </property>
+            <property name="maximum">
+             <number>50</number>
+            </property>
+            <property name="value">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="disk">
+       <attribute name="title">
+        <string>Дисковый</string>
+       </attribute>
+       <widget class="QLabel" name="disk_picture">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>190</y>
+          <width>175</width>
+          <height>178</height>
+         </rect>
+        </property>
         <property name="text">
-         <string>Оригинальный текст</string>
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>images/alphabet.png</pixmap>
         </property>
        </widget>
-      </item>
-      <item>
-       <widget class="QTextEdit" name="textEdit"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="encrypted_decrypted_text">
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Зашифрованный / Дешифрованный текст</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QTextEdit" name="textEdit_2"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="buttons">
-      <item>
-       <widget class="QPushButton" name="encrypt">
-        <property name="text">
-         <string>Зашифровать</string>
-        </property>
-        <property name="icon">
-         <iconset resource="images/images.qrc">
-          <normaloff>:/images/padlock_unlocked.svg</normaloff>
-          <normalon>:/images/padlock_locked.svg</normalon>:/images/padlock_unlocked.svg</iconset>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_2">
-        <property name="text">
-         <string>Actio!</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton">
-        <property name="text">
-         <string>Помощь</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="slider">
-      <item>
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>Шаг шифрования</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QSlider" name="horizontalSlider">
-        <property name="minimum">
-         <number>-50</number>
-        </property>
-        <property name="maximum">
-         <number>50</number>
-        </property>
-        <property name="value">
-         <number>1</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QSpinBox" name="spinBox">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="mouseTracking">
-         <bool>false</bool>
-        </property>
-        <property name="tabletTracking">
-         <bool>false</bool>
-        </property>
-        <property name="autoFillBackground">
-         <bool>false</bool>
-        </property>
-        <property name="buttonSymbols">
-         <enum>QAbstractSpinBox::NoButtons</enum>
-        </property>
-        <property name="minimum">
-         <number>-50</number>
-        </property>
-        <property name="maximum">
-         <number>50</number>
-        </property>
-        <property name="value">
-         <number>1</number>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="label_4"/>
+      </widget>
+      <widget class="QWidget" name="about_program">
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	text-align: center;
+	margin: auto;
+}</string>
+       </property>
+       <attribute name="title">
+        <string>О программе</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="text_about_program">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>© Константин Подушко Все права защищены. Universal Encoder.</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
     </item>
    </layout>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menu">
-    <property name="title">
-     <string>Шифраторы</string>
-    </property>
-    <addaction name="action"/>
-   </widget>
-   <widget class="QMenu" name="menu_2">
-    <property name="title">
-     <string>О программе</string>
-    </property>
-   </widget>
-   <addaction name="menu"/>
-   <addaction name="menu_2"/>
   </widget>
   <action name="action">
    <property name="text">
@@ -226,7 +256,7 @@ QSpinBox:hover {
   </action>
  </widget>
  <resources>
-  <include location="images/images.qrc"/>
+  <include location="resources.qrc"/>
  </resources>
  <connections/>
 </ui>
