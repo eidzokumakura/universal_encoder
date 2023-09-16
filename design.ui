@@ -14,7 +14,18 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QTextEdit {
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="caesar">
+       <property name="styleSheet">
+        <string notr="true">QTextEdit {
     border: 2px solid gray;
     border-radius: 5px;
 }
@@ -69,15 +80,7 @@ QSpinBox {
 QSpinBox:hover {
     border-color: #009900;
 }</string>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QTabWidget" name="tabWidget">
-      <property name="currentIndex">
-       <number>1</number>
-      </property>
-      <widget class="QWidget" name="caesar">
+       </property>
        <attribute name="title">
         <string>Шифр Цезаря</string>
        </attribute>
@@ -202,23 +205,150 @@ QSpinBox:hover {
        </layout>
       </widget>
       <widget class="QWidget" name="disk">
+       <property name="styleSheet">
+        <string notr="true">QSlider::sub-page:horizontal {
+    background-color: #c4b3a1;
+}
+
+QSlider::add-page:horizontal {
+    background-color: #cab9b0;
+}
+QSlider::handle:horizontal {
+    background-color: #b88c47;
+    width: 16px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+QSlider::groove:horizontal {
+    background-color: transparent;
+    height: 10px;
+}
+QLabel {
+    font: 500 18pt &quot;Bookman Old Style&quot;;
+}</string>
+       </property>
        <attribute name="title">
         <string>Дисковый</string>
        </attribute>
-       <widget class="QLabel" name="disk_picture">
+       <widget class="QWidget" name="verticalLayoutWidget">
         <property name="geometry">
          <rect>
-          <x>290</x>
-          <y>190</y>
-          <width>175</width>
-          <height>178</height>
+          <x>0</x>
+          <y>460</y>
+          <width>771</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="wheel_layout">
+         <item>
+          <widget class="QLabel" name="wheel_label">
+           <property name="text">
+            <string>Колесо</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSlider" name="wheel_slider">
+           <property name="maximum">
+            <number>360</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>540</y>
+          <width>771</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="key_layout">
+         <item>
+          <widget class="QLabel" name="key_label">
+           <property name="text">
+            <string>Ключ</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSlider" name="key_slider">
+           <property name="maximum">
+            <number>360</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLabel" name="inner_wheel">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>771</width>
+          <height>491</height>
          </rect>
         </property>
         <property name="text">
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>images/alphabet.png</pixmap>
+         <pixmap resource="resources.qrc">:/images/images/inner_wheel.png</pixmap>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="outer_wheel">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>771</width>
+          <height>491</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/images/images/outer_wheel.png</pixmap>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="key">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>771</width>
+          <height>491</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/images/images/key.png</pixmap>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </widget>

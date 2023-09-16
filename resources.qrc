@@ -1,7 +1,9 @@
 <RCC>
   <qresource prefix="images">
-    <file>images/alphabet.png</file>
     <file>images/padlock_locked.svg</file>
     <file>images/padlock_unlocked.svg</file>
+    <file>images/inner_wheel.png</file>
+    <file>images/key.png</file>
+    <file>images/outer_wheel.png</file>
   </qresource>
 </RCC>
