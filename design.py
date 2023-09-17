@@ -20,13 +20,17 @@ from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QHBoxLayout, QLab
     QMainWindow, QPushButton, QSizePolicy, QSlider,
     QSpinBox, QTabWidget, QTextEdit, QVBoxLayout,
     QWidget)
-import resources
+import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
+        MainWindow.setEnabled(True)
         MainWindow.resize(797, 651)
+        icon = QIcon()
+        icon.addFile(u":/images/images/padlock_locked.svg", QSize(), QIcon.Normal, QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet(u"")
         self.action = QAction(MainWindow)
         self.action.setObjectName(u"action")
@@ -39,6 +43,8 @@ class Ui_MainWindow(object):
         self.caesar = QWidget()
         self.caesar.setObjectName(u"caesar")
         self.caesar.setStyleSheet(u"QTextEdit {\n"
+"	font: 12pt \"Bookman Old Style\";\n"
+"	background: white;\n"
 "    border: 2px solid gray;\n"
 "    border-radius: 5px;\n"
 "}\n"
@@ -46,24 +52,24 @@ class Ui_MainWindow(object):
 "QPushButton {\n"
 "    border: 2px solid gray;\n"
 "    border-radius: 5px;\n"
-"    font: 700 12pt \"Hack\";\n"
+"    font: 700 12pt \"Bookman Old Style\";\n"
 "}\n"
 "QPushButton:hover {\n"
-"    border-color: #090;\n"
+"    border-color: #a01914;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    border: 4px solid #090;\n"
+"    border: 4px solid #a01914;\n"
 "    border-radius: 5px;\n"
 "}\n"
 "QPushButton:checked {\n"
 "    color: white;\n"
-"    background-color: #090;\n"
+"    background-color: #a01914;\n"
 "    border: 2px solid black;\n"
 "    border-radius: 5px;\n"
 "}\n"
 "QSlider::sub-page:horizontal {\n"
-"    background-color: #090;\n"
+"    background-color: #a01914;\n"
 "}\n"
 "\n"
 "QSlider::add-page:horizontal {\n"
@@ -80,15 +86,16 @@ class Ui_MainWindow(object):
 "    background-color: transparent;\n"
 "    height: 7px;\n"
 "}\n"
-"QLabel {\n"
-"    font: 500 11pt \"Ubuntu\";\n"
+"QLabel"
+                        " {\n"
+"    font: 500 11pt \"Bookman Old Style\";\n"
 "}\n"
 "QSpinBox {\n"
-"    border: 2px solid gra"
-                        "y;\n"
+"    border: 2px solid gray;\n"
 "    border-radius: 5px;\n"
 "    background: transparent;\n"
 "    padding: 2px;\n"
+"	font: 11pt \"Bookman Old Style\";\n"
 "}\n"
 "\n"
 "QSpinBox:hover {\n"
@@ -131,21 +138,21 @@ class Ui_MainWindow(object):
         self.actio = QPushButton(self.caesar)
         self.actio.setObjectName(u"actio")
         self.actio.setEnabled(True)
-        icon = QIcon()
-        icon.addFile(u":/images/padlock_unlocked.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon.addFile(u":/images/padlock_locked.png", QSize(), QIcon.Normal, QIcon.On)
-        icon.addFile(u":/images/images/padlock_unlocked.svg", QSize(), QIcon.Disabled, QIcon.Off)
-        icon.addFile(u":/images/images/padlock_locked.svg", QSize(), QIcon.Disabled, QIcon.On)
-        self.actio.setIcon(icon)
+        icon1 = QIcon()
+        icon1.addFile(u":/images/padlock_unlocked.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u":/images/padlock_locked.png", QSize(), QIcon.Normal, QIcon.On)
+        icon1.addFile(u":/images/images/padlock_unlocked.svg", QSize(), QIcon.Disabled, QIcon.Off)
+        icon1.addFile(u":/images/images/padlock_locked.svg", QSize(), QIcon.Disabled, QIcon.On)
+        self.actio.setIcon(icon1)
         self.actio.setCheckable(True)
         self.actio.setChecked(True)
 
         self.buttons.addWidget(self.actio)
 
-        self.pushButton = QPushButton(self.caesar)
-        self.pushButton.setObjectName(u"pushButton")
+        self.copy_caesar_btn = QPushButton(self.caesar)
+        self.copy_caesar_btn.setObjectName(u"copy_caesar_btn")
 
-        self.buttons.addWidget(self.pushButton)
+        self.buttons.addWidget(self.copy_caesar_btn)
 
 
         self.verticalLayout.addLayout(self.buttons)
@@ -183,6 +190,100 @@ class Ui_MainWindow(object):
         self.verticalLayout.addLayout(self.slider)
 
         self.tabWidget.addTab(self.caesar, "")
+        self.morse = QWidget()
+        self.morse.setObjectName(u"morse")
+        self.morse.setStyleSheet(u"QTextEdit {\n"
+"	background: white;\n"
+"    border: 2px solid gray;\n"
+"    border-radius: 5px;\n"
+"	font: 12pt \"Bookman Old Style\";\n"
+"}\n"
+"\n"
+"QPushButton {\n"
+"    border: 2px solid gray;\n"
+"    border-radius: 5px;\n"
+"    font: 700 12pt \"Bookman Old Style\";\n"
+"}\n"
+"QPushButton:hover {\n"
+"    border-color: #090;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border: 4px solid #090;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"QPushButton:checked {\n"
+"    color: white;\n"
+"    background-color: #090;\n"
+"    border: 2px solid black;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"QLabel {\n"
+"    font: 500 11pt \"Bookman Old Style\";\n"
+"}")
+        self.verticalLayout_6 = QVBoxLayout(self.morse)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.verticalLayout_3 = QVBoxLayout()
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.label_5 = QLabel(self.morse)
+        self.label_5.setObjectName(u"label_5")
+
+        self.verticalLayout_3.addWidget(self.label_5)
+
+        self.morse_original = QTextEdit(self.morse)
+        self.morse_original.setObjectName(u"morse_original")
+
+        self.verticalLayout_3.addWidget(self.morse_original)
+
+
+        self.verticalLayout_6.addLayout(self.verticalLayout_3)
+
+        self.verticalLayout_5 = QVBoxLayout()
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.label_4 = QLabel(self.morse)
+        self.label_4.setObjectName(u"label_4")
+
+        self.verticalLayout_5.addWidget(self.label_4)
+
+        self.morse_enc_dec = QTextEdit(self.morse)
+        self.morse_enc_dec.setObjectName(u"morse_enc_dec")
+
+        self.verticalLayout_5.addWidget(self.morse_enc_dec)
+
+
+        self.verticalLayout_6.addLayout(self.verticalLayout_5)
+
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.morse_action_btn = QPushButton(self.morse)
+        self.morse_action_btn.setObjectName(u"morse_action_btn")
+        icon2 = QIcon()
+        icon2.addFile(u":/images/images/padlock_unlocked.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u":/images/images/padlock_locked.svg", QSize(), QIcon.Normal, QIcon.On)
+        self.morse_action_btn.setIcon(icon2)
+        self.morse_action_btn.setCheckable(True)
+        self.morse_action_btn.setChecked(True)
+
+        self.horizontalLayout.addWidget(self.morse_action_btn)
+
+        self.morse_sound_btn = QPushButton(self.morse)
+        self.morse_sound_btn.setObjectName(u"morse_sound_btn")
+        self.morse_sound_btn.setEnabled(True)
+        icon3 = QIcon()
+        icon3.addFile(u":/images/images/audio.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.morse_sound_btn.setIcon(icon3)
+
+        self.horizontalLayout.addWidget(self.morse_sound_btn)
+
+        self.copy_morse_btn = QPushButton(self.morse)
+        self.copy_morse_btn.setObjectName(u"copy_morse_btn")
+
+        self.horizontalLayout.addWidget(self.copy_morse_btn)
+
+
+        self.verticalLayout_6.addLayout(self.horizontalLayout)
+
+        self.tabWidget.addTab(self.morse, "")
         self.disk = QWidget()
         self.disk.setObjectName(u"disk")
         self.disk.setStyleSheet(u"QSlider::sub-page:horizontal {\n"
@@ -259,17 +360,116 @@ class Ui_MainWindow(object):
         self.key.setPixmap(QPixmap(u":/images/images/key.png"))
         self.key.setAlignment(Qt.AlignCenter)
         self.tabWidget.addTab(self.disk, "")
+        self.other = QWidget()
+        self.other.setObjectName(u"other")
+        self.other.setStyleSheet(u"QTextEdit {\n"
+"	background: white;\n"
+"    border: 2px solid gray;\n"
+"    border-radius: 5px;\n"
+"	font: 12pt \"Bookman Old Style\";\n"
+"}\n"
+"\n"
+"QPushButton {\n"
+"    border: 2px solid gray;\n"
+"    border-radius: 5px;\n"
+"    font: 700 12pt \"Bookman Old Style\";\n"
+"}\n"
+"QPushButton:hover {\n"
+"    border-color: black;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border: 4px solid black;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"QPushButton:checked {\n"
+"    color: black;\n"
+"    background-color: white;\n"
+"    border: 2px solid black;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"QLabel {\n"
+"    font: 500 11pt \"Bookman Old Style\";\n"
+"}")
+        self.verticalLayout_9 = QVBoxLayout(self.other)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.other_original_layout = QVBoxLayout()
+        self.other_original_layout.setObjectName(u"other_original_layout")
+        self.label_6 = QLabel(self.other)
+        self.label_6.setObjectName(u"label_6")
+
+        self.other_original_layout.addWidget(self.label_6)
+
+        self.other_original = QTextEdit(self.other)
+        self.other_original.setObjectName(u"other_original")
+
+        self.other_original_layout.addWidget(self.other_original)
+
+
+        self.verticalLayout_9.addLayout(self.other_original_layout)
+
+        self.other_enc_dec_layout = QVBoxLayout()
+        self.other_enc_dec_layout.setObjectName(u"other_enc_dec_layout")
+        self.label_7 = QLabel(self.other)
+        self.label_7.setObjectName(u"label_7")
+
+        self.other_enc_dec_layout.addWidget(self.label_7)
+
+        self.other_enc_dec = QTextEdit(self.other)
+        self.other_enc_dec.setObjectName(u"other_enc_dec")
+
+        self.other_enc_dec_layout.addWidget(self.other_enc_dec)
+
+
+        self.verticalLayout_9.addLayout(self.other_enc_dec_layout)
+
+        self.cipher_btn_vert_layout = QVBoxLayout()
+        self.cipher_btn_vert_layout.setObjectName(u"cipher_btn_vert_layout")
+        self.main_buttons_layout = QHBoxLayout()
+        self.main_buttons_layout.setObjectName(u"main_buttons_layout")
+        self.other_action_btn = QPushButton(self.other)
+        self.other_action_btn.setObjectName(u"other_action_btn")
+        self.other_action_btn.setIcon(icon2)
+        self.other_action_btn.setCheckable(True)
+        self.other_action_btn.setChecked(True)
+
+        self.main_buttons_layout.addWidget(self.other_action_btn)
+
+        self.other_copy_btn = QPushButton(self.other)
+        self.other_copy_btn.setObjectName(u"other_copy_btn")
+
+        self.main_buttons_layout.addWidget(self.other_copy_btn)
+
+
+        self.cipher_btn_vert_layout.addLayout(self.main_buttons_layout)
+
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.hash = QPushButton(self.other)
+        self.hash.setObjectName(u"hash")
+
+        self.horizontalLayout_2.addWidget(self.hash)
+
+
+        self.cipher_btn_vert_layout.addLayout(self.horizontalLayout_2)
+
+
+        self.verticalLayout_9.addLayout(self.cipher_btn_vert_layout)
+
+        self.tabWidget.addTab(self.other, "")
         self.about_program = QWidget()
         self.about_program.setObjectName(u"about_program")
         self.about_program.setStyleSheet(u"QLabel {\n"
 "	text-align: center;\n"
 "	margin: auto;\n"
+"	font: 12pt \"Bookman Old Style\";\n"
 "}")
         self.verticalLayout_2 = QVBoxLayout(self.about_program)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.text_about_program = QLabel(self.about_program)
         self.text_about_program.setObjectName(u"text_about_program")
         self.text_about_program.setStyleSheet(u"")
+        self.text_about_program.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_2.addWidget(self.text_about_program)
 
@@ -281,28 +481,40 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0423\u043d\u0438\u0432\u0435\u0440\u0441\u0430\u043b\u044c\u043d\u044b\u0439 \u0448\u0438\u0444\u0440\u0430\u0442\u043e\u0440", None))
         self.action.setText(QCoreApplication.translate("MainWindow", u"\u0426\u0435\u0437\u0430\u0440\u044f", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 / \u0414\u0435\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442", None))
         self.actio.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))
+        self.copy_caesar_btn.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u0428\u0430\u0433 \u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u0438\u044f", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.caesar), QCoreApplication.translate("MainWindow", u"\u0428\u0438\u0444\u0440 \u0426\u0435\u0437\u0430\u0440\u044f", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 / \u0414\u0435\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442", None))
+        self.morse_action_btn.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c", None))
+        self.morse_sound_btn.setText(QCoreApplication.translate("MainWindow", u"\u0412\u043e\u0441\u043f\u0440\u043e\u0438\u0437\u0432\u0435\u0441\u0442\u0438", None))
+        self.copy_morse_btn.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.morse), QCoreApplication.translate("MainWindow", u"\u041c\u043e\u0440\u0437\u0435", None))
         self.wheel_label.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u0435\u0441\u043e", None))
         self.key_label.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043b\u044e\u0447", None))
         self.inner_wheel.setText("")
         self.outer_wheel.setText("")
         self.key.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.disk), QCoreApplication.translate("MainWindow", u"\u0414\u0438\u0441\u043a\u043e\u0432\u044b\u0439", None))
-        self.text_about_program.setText(QCoreApplication.translate("MainWindow", u"\u00a9 \u041a\u043e\u043d\u0441\u0442\u0430\u043d\u0442\u0438\u043d \u041f\u043e\u0434\u0443\u0448\u043a\u043e \u0412\u0441\u0435 \u043f\u0440\u0430\u0432\u0430 \u0437\u0430\u0449\u0438\u0449\u0435\u043d\u044b. Universal Encoder.", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 / \u0414\u0435\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442", None))
+        self.other_action_btn.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c", None))
+        self.other_copy_btn.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))
+        self.hash.setText(QCoreApplication.translate("MainWindow", u"Hash", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.other), QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0447\u0438\u0435", None))
+        self.text_about_program.setText(QCoreApplication.translate("MainWindow", u"\u00a9 \u041a\u043e\u043d\u0441\u0442\u0430\u043d\u0442\u0438\u043d \u041f\u043e\u0434\u0443\u0448\u043a\u043e. \u0412\u0441\u0435 \u043f\u0440\u0430\u0432\u0430 \u0437\u0430\u0449\u0438\u0449\u0435\u043d\u044b. \u0423\u043d\u0438\u0432\u0435\u0440\u0441\u0430\u043b\u044c\u043d\u044b\u0439 \u0448\u0438\u0444\u0440\u0430\u0442\u043e\u0440.", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.about_program), QCoreApplication.translate("MainWindow", u"\u041e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435", None))
     # retranslateUi
 

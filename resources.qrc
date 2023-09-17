@@ -1,6 +1,8 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/audio.png</file>
     <file>images/padlock_locked.svg</file>
+    <file>images/old_paper.jpg</file>
     <file>images/padlock_unlocked.svg</file>
     <file>images/inner_wheel.png</file>
     <file>images/key.png</file>
