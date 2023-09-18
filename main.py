@@ -1,7 +1,7 @@
 import sys
 import pyperclip
 from encode_functions import decrypt, encrypt
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtGui import QPixmap, QTransform
 from design import Ui_MainWindow
 from morse_functions import text_to_morse, morse_to_text, morseaudio

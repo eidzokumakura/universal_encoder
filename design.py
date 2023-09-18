@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(797, 651)
+        MainWindow.resize(790, 706)
         icon = QIcon()
         icon.addFile(u":/images/images/padlock_locked.svg", QSize(), QIcon.Normal, QIcon.Off)
         MainWindow.setWindowIcon(icon)
@@ -466,12 +466,36 @@ class Ui_MainWindow(object):
 "}")
         self.verticalLayout_2 = QVBoxLayout(self.about_program)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.text_about_program = QLabel(self.about_program)
-        self.text_about_program.setObjectName(u"text_about_program")
-        self.text_about_program.setStyleSheet(u"")
-        self.text_about_program.setAlignment(Qt.AlignCenter)
+        self.verticalLayout_7 = QVBoxLayout()
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.label_9 = QLabel(self.about_program)
+        self.label_9.setObjectName(u"label_9")
+        font = QFont()
+        font.setFamilies([u"Bookman Old Style"])
+        font.setPointSize(12)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_9.setFont(font)
 
-        self.verticalLayout_2.addWidget(self.text_about_program)
+        self.verticalLayout_7.addWidget(self.label_9)
+
+        self.label_8 = QLabel(self.about_program)
+        self.label_8.setObjectName(u"label_8")
+
+        self.verticalLayout_7.addWidget(self.label_8)
+
+        self.label_10 = QLabel(self.about_program)
+        self.label_10.setObjectName(u"label_10")
+
+        self.verticalLayout_7.addWidget(self.label_10)
+
+        self.label_11 = QLabel(self.about_program)
+        self.label_11.setObjectName(u"label_11")
+
+        self.verticalLayout_7.addWidget(self.label_11)
+
+
+        self.verticalLayout_2.addLayout(self.verticalLayout_7)
 
         self.tabWidget.addTab(self.about_program, "")
 
@@ -514,7 +538,27 @@ class Ui_MainWindow(object):
         self.other_copy_btn.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))
         self.hash.setText(QCoreApplication.translate("MainWindow", u"Hash", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.other), QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0447\u0438\u0435", None))
-        self.text_about_program.setText(QCoreApplication.translate("MainWindow", u"\u00a9 \u041a\u043e\u043d\u0441\u0442\u0430\u043d\u0442\u0438\u043d \u041f\u043e\u0434\u0443\u0448\u043a\u043e. \u0412\u0441\u0435 \u043f\u0440\u0430\u0432\u0430 \u0437\u0430\u0449\u0438\u0449\u0435\u043d\u044b. \u0423\u043d\u0438\u0432\u0435\u0440\u0441\u0430\u043b\u044c\u043d\u044b\u0439 \u0448\u0438\u0444\u0440\u0430\u0442\u043e\u0440.", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"\u0428\u0438\u0444\u0440 \u0426\u0435\u0437\u0430\u0440\u044f:\n"
+"\"\u041e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442\" - \u043f\u043e\u043b\u0435 \u0434\u043b\u044f \u0432\u0432\u043e\u0434\u0430 \u0442\u0435\u043a\u0441\u0442\u0430 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f.\n"
+"\"\u0417\u0430\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 / \u0414\u0435\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442\" - \u0442\u0435\u043a\u0441\u0442 \u043f\u043e\u0441\u043b\u0435 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0438.\n"
+"\"\u0417\u0430\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c\"/\"\u0414\u0435\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c\" - \u0432\u044b\u0431\u043e\u0440 \u0440\u0435\u0436\u0438\u043c\u0430.\n"
+"\"\u0428\u0430\u0433 \u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u0438\u044f\" - \u043f\u043e\u043b\u0437\u0443\u043d"
+                        "\u043e\u043a \u0434\u043b\u044f \u0440\u0435\u0433\u0443\u043b\u0438\u0440\u043e\u0432\u043a\u0438 \u0448\u0430\u0433\u0430 \u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u0438\u044f (\u043a\u043b\u044e\u0447\u0430).\n"
+"\"\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c\" - \u0441\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440 \u043e\u0431\u043c\u0435\u043d\u0430 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u0430\u043d\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442. ", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"\u041c\u043e\u0440\u0437\u0435:\n"
+"\"\u041e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442\" - \u043f\u043e\u043b\u0435 \u0434\u043b\u044f \u0432\u0432\u043e\u0434\u0430 \u0442\u0435\u043a\u0441\u0442\u0430 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f.\n"
+"\"\u0417\u0430\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 / \u0414\u0435\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442\" - \u0442\u0435\u043a\u0441\u0442 \u043f\u043e\u0441\u043b\u0435 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0438.\n"
+"\"\u0417\u0430\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c\"/\"\u0414\u0435\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c\" - \u0432\u044b\u0431\u043e\u0440 \u0440\u0435\u0436\u0438\u043c\u0430.\n"
+"\"\u0412\u043e\u0441\u043f\u0440\u043e\u0438\u0437\u0432\u0435\u0441\u0442\u0438\" - \u043e\u0437\u0432\u0443\u0447\u0438\u0442\u044c \u0448\u0438\u0444\u0440"
+                        " \u041c\u043e\u0440\u0437\u0435.\n"
+"\"\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c\" - \u0441\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440 \u043e\u0431\u043c\u0435\u043d\u0430 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u0430\u043d\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442. ", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"\u0414\u0438\u0441\u043a\u043e\u0432\u044b\u0439: \u043d\u0430\u0441\u0442\u0440\u0430\u0438\u0432\u0430\u0439\u0442\u0435 \u043f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0432\u043d\u0435\u0448\u043d\u0435\u0433\u043e \u043a\u0440\u0443\u0433\u0430,\n"
+"\u0432\u0440\u0430\u0449\u0430\u0439\u0442\u0435 \u043a\u043b\u044e\u0447 \u0434\u043b\u044f \u0441\u043e\u043f\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u0431\u0443\u043a\u0432.\n"
+"\u041f\u0440\u0438\u043c\u0435\u0440: \u041a=\u042b. \u0421\u043e\u043f\u043e\u0441\u0442\u0430\u0432\u044c\u0442\u0435 \u041a \u0432\u043d\u0435\u0448\u043d\u0435\u0433\u043e \u043a\u0440\u0443\u0433\u0430 \u0441 \u042b \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0435\u0433\u043e \u043a\u0440\u0443\u0433\u0430.\n"
+"\u041d\u0430\u0439\u0434\u0438\u0442\u0435 \u043d\u0443\u0436\u043d\u0443\u044e \u0431\u0443\u043a\u0432\u0443 \u043e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u0442\u0435\u043a\u0441\u0442\u0430 \u043d\u0430"
+                        " \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0435\u043c \u043a\u0440\u0443\u0433\u0435.\n"
+"\u0411\u0443\u043a\u0432\u0430 \u043d\u0430 \u0432\u043d\u0435\u0448\u043d\u0435\u043c \u043a\u0440\u0443\u0433\u0435 - \u0431\u0443\u043a\u0432\u0430 \u0434\u043b\u044f \u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0438\u0441\u043a\u043e\u043c\u043e\u0439. ", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"\u00a9 \u041a\u043e\u043d\u0441\u0442\u0430\u043d\u0442\u0438\u043d \u041f\u043e\u0434\u0443\u0448\u043a\u043e. \u0412\u0441\u0435 \u043f\u0440\u0430\u0432\u0430 \u0437\u0430\u0449\u0438\u0449\u0435\u043d\u044b. \u0423\u043d\u0438\u0432\u0435\u0440\u0441\u0430\u043b\u044c\u043d\u044b\u0439 \u0448\u0438\u0444\u0440\u0430\u0442\u043e\u0440.", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.about_program), QCoreApplication.translate("MainWindow", u"\u041e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435", None))
     # retranslateUi
 

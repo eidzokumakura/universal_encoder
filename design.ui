@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>797</width>
-    <height>651</height>
+    <width>790</width>
+    <height>706</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,7 +28,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="caesar">
        <property name="styleSheet">
@@ -594,17 +594,58 @@ QLabel {
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QLabel" name="text_about_program">
-          <property name="styleSheet">
-           <string notr="true"/>
-          </property>
-          <property name="text">
-           <string>© Константин Подушко. Все права защищены. Универсальный шифратор.</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QLabel" name="label_9">
+            <property name="font">
+             <font>
+              <family>Bookman Old Style</family>
+              <pointsize>12</pointsize>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Шифр Цезаря:
+&quot;Оригинальный текст&quot; - поле для ввода текста пользователя.
+&quot;Зашифрованный / Дешифрованный текст&quot; - текст после обработки.
+&quot;Зашифровать&quot;/&quot;Дешифровать&quot; - выбор режима.
+&quot;Шаг шифрования&quot; - ползунок для регулировки шага шифрования (ключа).
+&quot;Скопировать&quot; - сохранить в буфер обмена обработанный текст. </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Морзе:
+&quot;Оригинальный текст&quot; - поле для ввода текста пользователя.
+&quot;Зашифрованный / Дешифрованный текст&quot; - текст после обработки.
+&quot;Зашифровать&quot;/&quot;Дешифровать&quot; - выбор режима.
+&quot;Воспроизвести&quot; - озвучить шифр Морзе.
+&quot;Скопировать&quot; - сохранить в буфер обмена обработанный текст. </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>Дисковый: настраивайте положение внешнего круга,
+вращайте ключ для сопоставления букв.
+Пример: К=Ы. Сопоставьте К внешнего круга с Ы внутреннего круга.
+Найдите нужную букву оригинального текста на внутреннем круге.
+Буква на внешнем круге - буква для шифрования искомой. </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>© Константин Подушко. Все права защищены. Универсальный шифратор.</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
