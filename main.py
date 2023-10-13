@@ -5,6 +5,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtGui import QPixmap, QTransform
 from design import Ui_MainWindow
 from morse_functions import text_to_morse, morse_to_text, morseaudio
+from other_functions import atbash_encrypt, atbash_decrypt
 
 
 class RotDecoder(QMainWindow):
@@ -35,6 +36,7 @@ class RotDecoder(QMainWindow):
         self.ui.wheel_slider.valueChanged.connect(self.rotate_wheel)
 
         # Other
+        self.ui.atbash.clicked.connect(lambda: self.choose_type_other(self.encrypt_atbash, self.decrypt_atbash))
         self.ui.hash.clicked.connect(lambda: self.choose_type_other(self.encrypting_hash, self.decrypting_hash))
         self.ui.other_action_btn.clicked.connect(self.check_btn_other)
         self.ui.other_copy_btn.clicked.connect(self.copy_text_other)
@@ -67,12 +69,16 @@ class RotDecoder(QMainWindow):
         self.ui.morse_enc_dec.setText(morse_to_text(self.ui.morse_original.toPlainText()))
 
     def encrypting_hash(self):
-        print("Я шифрую")
         self.ui.other_enc_dec.setText(str(hash(self.ui.other_original.toPlainText())))
 
     def decrypting_hash(self):
-        print("Я дешифрую")
         self.ui.other_enc_dec.setText("Hash невозможно дешифровать.")
+    def encrypt_atbash(self):
+        self.ui.other_enc_dec.setText(atbash_encrypt(self.ui.other_original.toPlainText()))
+    def decrypt_atbash(self):
+        self.ui.other_enc_dec.setText(atbash_decrypt(self.ui.other_original.toPlainText()))
+
+
 
     def check_btn_caesar(self):
         if self.ui.actio.isChecked():

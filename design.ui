@@ -28,7 +28,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="caesar">
        <property name="styleSheet">
@@ -572,6 +572,13 @@ QLabel {
              <widget class="QPushButton" name="hash">
               <property name="text">
                <string>Hash</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="atbash">
+              <property name="text">
+               <string>Атбаш</string>
               </property>
              </widget>
             </item>

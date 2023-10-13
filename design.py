@@ -450,6 +450,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.hash)
 
+        self.atbash = QPushButton(self.other)
+        self.atbash.setObjectName(u"atbash")
+
+        self.horizontalLayout_2.addWidget(self.atbash)
+
 
         self.cipher_btn_vert_layout.addLayout(self.horizontalLayout_2)
 
@@ -505,7 +510,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -537,6 +542,7 @@ class Ui_MainWindow(object):
         self.other_action_btn.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c", None))
         self.other_copy_btn.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))
         self.hash.setText(QCoreApplication.translate("MainWindow", u"Hash", None))
+        self.atbash.setText(QCoreApplication.translate("MainWindow", u"\u0410\u0442\u0431\u0430\u0448", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.other), QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0447\u0438\u0435", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"\u0428\u0438\u0444\u0440 \u0426\u0435\u0437\u0430\u0440\u044f:\n"
 "\"\u041e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442\" - \u043f\u043e\u043b\u0435 \u0434\u043b\u044f \u0432\u0432\u043e\u0434\u0430 \u0442\u0435\u043a\u0441\u0442\u0430 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f.\n"
