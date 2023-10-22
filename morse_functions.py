@@ -48,10 +48,3 @@ def morseaudio(morse):
             pause(pauseWords)
         else:
             pause(dashLength)
-# Пример использования:
-
-# text = "Привет, как дела?"
-# morse = text_to_morse(text)
-# print(f'Исходный текст: {text}')
-# print(f'Текст в азбуке морзе: {morse}')
-# print(f'Текст после обратного перевода: {morse_to_text(morse)}')

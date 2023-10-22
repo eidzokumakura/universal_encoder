@@ -6,6 +6,8 @@ from PySide6.QtGui import QPixmap, QTransform
 from design import Ui_MainWindow
 from morse_functions import text_to_morse, morse_to_text, morseaudio
 from other_functions import atbash_encrypt, atbash_decrypt
+from vigenere_functions import vigenere_encrypt, vigenere_decrypt
+import urllib.parse
 
 
 class RotDecoder(QMainWindow):
@@ -35,11 +37,33 @@ class RotDecoder(QMainWindow):
         self.ui.key_slider.valueChanged.connect(self.rotate_key)
         self.ui.wheel_slider.valueChanged.connect(self.rotate_wheel)
 
+        # Vigenere
+        self.vigenere_key = ''
+        self.update_variable()
+        self.ui.vigenere_key.textChanged.connect(self.update_variable)
+        self.encrypting_vigenere()
+        self.ui.vigenere_key.textChanged.connect(self.encrypting_vigenere)
+        self.ui.vigenere_original.textChanged.connect(self.encrypting_vigenere)
+        self.ui.action_vigenere_btn.clicked.connect(self.check_btn_vigenere)
+        self.ui.copy_vigenere_btn.clicked.connect(self.copy_text_vigenere)
+
         # Other
         self.ui.atbash.clicked.connect(lambda: self.choose_type_other(self.encrypt_atbash, self.decrypt_atbash))
         self.ui.hash.clicked.connect(lambda: self.choose_type_other(self.encrypting_hash, self.decrypting_hash))
+        self.ui.url.clicked.connect(lambda: self.choose_type_other(self.encrypt_url, self.decrypt_url))
         self.ui.other_action_btn.clicked.connect(self.check_btn_other)
         self.ui.other_copy_btn.clicked.connect(self.copy_text_other)
+
+    def update_variable(self):
+        self.vigenere_key = self.ui.vigenere_key.text()
+        if len(self.vigenere_key) == 0:
+            self.ui.vigenere_original.clear()
+            self.ui.vigenere_original.setEnabled(False)
+            self.ui.vigenere_enc_dec.clear()
+            self.ui.vigenere_enc_dec.setEnabled(False)
+        else:
+            self.ui.vigenere_original.setEnabled(True)
+            self.ui.vigenere_enc_dec.setEnabled(True)
 
     def rotate_wheel(self):
         self.transform = QTransform().rotate(self.ui.wheel_slider.sliderPosition())
@@ -77,6 +101,14 @@ class RotDecoder(QMainWindow):
         self.ui.other_enc_dec.setText(atbash_encrypt(self.ui.other_original.toPlainText()))
     def decrypt_atbash(self):
         self.ui.other_enc_dec.setText(atbash_decrypt(self.ui.other_original.toPlainText()))
+    def encrypt_url(self):
+        self.ui.other_enc_dec.setText(urllib.parse.quote(self.ui.other_original.toPlainText()))
+    def decrypt_url(self):
+        self.ui.other_enc_dec.setText(urllib.parse.unquote(self.ui.other_original.toPlainText()))
+    def encrypting_vigenere(self):
+        self.ui.vigenere_enc_dec.setText(vigenere_encrypt(self.ui.vigenere_original.toPlainText(), self.vigenere_key))
+    def decrypting_vigenere(self):
+        self.ui.vigenere_enc_dec.setText(vigenere_decrypt(self.ui.vigenere_original.toPlainText(), self.vigenere_key))
 
 
 
@@ -104,6 +136,18 @@ class RotDecoder(QMainWindow):
             self.ui.morse_original.textChanged.connect(self.decrypting_morse)
             self.ui.morse_sound_btn.setEnabled(False)
 
+    def check_btn_vigenere(self):
+        if self.ui.action_vigenere_btn.isChecked():
+            self.encrypting_vigenere()
+            self.ui.action_vigenere_btn.setText("Зашифровать")
+            self.ui.vigenere_original.textChanged.connect(self.encrypting_vigenere)
+            self.ui.vigenere_key.textChanged.connect(self.encrypting_vigenere)
+        else:
+            self.decrypting_vigenere()
+            self.ui.action_vigenere_btn.setText("Дешифровать")
+            self.ui.vigenere_original.textChanged.connect(self.decrypting_vigenere)
+            self.ui.vigenere_key.textChanged.connect(self.decrypting_vigenere)
+
     def check_btn_other(self):
         if self.ui.other_action_btn.isChecked():
             self.ui.other_action_btn.setText("Зашифровать")
@@ -127,6 +171,8 @@ class RotDecoder(QMainWindow):
         self.copy_text(self.ui.textEdit_2)
     def copy_text_morse(self):
         self.copy_text(self.ui.morse_enc_dec)
+    def copy_text_vigenere(self):
+        self.copy_text(self.ui.vigenere_enc_dec)
     def copy_text_other(self):
         self.copy_text(self.ui.other_enc_dec)
 
