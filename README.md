@@ -4,7 +4,7 @@
 
 <a href="https://drive.google.com/uc?export=download&confirm=no_antivirus&id=12XNJ7sENBgL2_Xl0LENTi_YwKX44P9UH">Загрузить для Windows - Google Drive</a><br>
 
-<h2><strong><i>Шифр Цезаря:</i></strong><br>
+<strong><i>Шифр Цезаря:</i></strong><br>
 <strong>"Оригинальный текст"</strong> - поле для ввода текста пользователя.<br>
 <strong>"Зашифрованный / Дешифрованный текст"</strong> - текст после обработки.<br>
 <strong>"Зашифровать"/"Дешифровать"</strong> - выбор режима.<br>
