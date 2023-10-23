@@ -1,4 +1,4 @@
-<a href="https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/d/4_RtO7RRCTisxQ">Загрузить для Windows - Яндекс.Диск</a><br>
+<a href="https://disk.yandex.ru/d/4_RtO7RRCTisxQ">Загрузить для Windows - Яндекс.Диск</a><br>
 
 <a href="https://www.dropbox.com/scl/fi/w49wx54nce3gxv0r05all/.zip?rlkey=3pjbpcbih347cow6snpb1cavp&dl=1">Загрузить для Windows - Dropbox<a><br>
 
