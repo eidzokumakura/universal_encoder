@@ -44,6 +44,6 @@
 <strong>"Hash"</strong> - переводит строку в хэш. <i>Поддерживает любые символы.</i><br>
 <strong>"URL"</strong> - переводит строку в формат URL-строки. <i>Поддерживает русский язык.</i><br>
 <strong>"Атбаш"</strong> - шифрует строку с помощью шифра Атбаш. <i>Поддерживает русский язык.</i><br>
-<a href="https://ru.wikipedia.org/wiki/%D0%90%D1%82%D0%B1%D0%B0%D1%88">Что такое Атбаш?</a><br>
+<a href="https://ru.wikipedia.org/wiki/%D0%A5%D0%B5%D1%88-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F">Что такое Hash?</a><br>
 <a href="https://ru.wikipedia.org/wiki/URL">Что такое URL?</a><br>
-<a href="https://ru.wikipedia.org/wiki/URL">Что такое Атбаш?</a><br>
+<a href="https://ru.wikipedia.org/wiki/%D0%90%D1%82%D0%B1%D0%B0%D1%88">Что такое Атбаш?</a><br>
